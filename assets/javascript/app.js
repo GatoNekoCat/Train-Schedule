@@ -32,6 +32,14 @@ $(document).ready(function(){
         var frequency = childSnapshot.val().frequency;
         var startTime = childSnapshot.val().startTime;
 
+        // call moment to get the time and convert the startTime to useable format
+        var theTime = moment();
+        var startTimeConverted = moment(startTime, 'hh:mm').subtract(1, 'years');
+        
+        var timeDifference = moment().diff(moment(startTimeConverted), 'minutes');
+        // Time remaining until next train
+        var timeRem = timeDifference % frequency;
+
          
    
    
