@@ -21,7 +21,13 @@ $(document).ready(function(){
         frequency : frequency,
         startTime : startTime            
         });
-    }); 
+
+        // clear the values after collecting data
+        var trainName = $('#trainName').val("");
+        var destination = $('#destination').val("");
+        var frequency = $('#frequency').val('');
+        var startTime = $('#start-time').val('');     
+     }); 
 
     // on a firebase update this will add the data to the table. 
     database.ref().on("child_added", function(childSnapshot){
@@ -39,14 +45,17 @@ $(document).ready(function(){
         var timeDifference = moment().diff(moment(startTimeConverted), 'minutes');
         // Time remaining until next train
         var timeRem = timeDifference % frequency;
-
-         
+        // time till next train
+        var nextTrainTime = frequency - timeRem;
+        var nextTrain = moment().add(nextTrainTime, 'minutes');
+        var nextTrainConv = moment(nextTrain).format('hh:mm'); 
    
-   
-             $('.table').append('<tr><td>' + name +
+        // add data and converted times to the table
+        $('.table').append('<tr><td>' + name +
                  '</td> <td>' + destination +
                  '</td> <td>' + frequency +
-                 '</td> <td>' + startTime +                 
+                 '</td> <td>' + nextTrainConv +                 
+                 '</td> <td>' + nextTrainTime +                 
                  ' </td> </tr>');
          }) 
    
