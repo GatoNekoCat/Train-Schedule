@@ -1,20 +1,116 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Train Scheduler</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- style -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
+
 <body>
 
+    <div class="container">
 
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron align-center text-center">
+                    <h1> Train Scheduler</h1>
+                    <p>Enter train schedule into the database</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Current Train Schedule</h3>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <table class="table table-hover">
+
+                                <tr>
+                                    <th> Train Name </th>
+                                    <th> Destination </th>
+                                    <th> Frequency</th>
+                                    <th> Next Arrival </th>
+                                    <th> Minutes Away </th>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Add Train</h3>
+                </div>
+
+                <div class="panel-body">
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                                <div class="form-group">
+                                    <label for="trainName">Train Name</label>
+                                    <input type="string" class="form-control" id="trainName" placeholder="Train Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination">Destination</label>
+                                    <input type="string" class="form-control" id="destination" placeholder="Location">
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstTrainTime">First Train</label>
+                                    <input type="string" class="form-control" id="firstTrainTime" placeholder="Time">
+                                </div>
+                                <div class="form-group">
+                                    <label for="frequency">Frequency</label>
+                                    <input type="string" class="form-control" id="frequency" placeholder="Minutes">
+                                </div>
+
+                                <button type="submit" id="add-train" class="btn btn-default">Submit</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
         <script src="assets/javascript/app.js"></script>
 
 </body>
+
 </html>
